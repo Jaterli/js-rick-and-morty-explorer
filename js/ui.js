@@ -80,7 +80,7 @@ class UIManager {
             <div class="character-detail">
                 <img class="character-detail-img" src="${character.image}" alt="${character.name}">
                 <h2>${this.escapeHtml(character.name)}</h2>
-                <button class="fav-btn detail-fav-btn ${isFav ? 'active' : ''}" data-id="${character.id}">
+                <button class="nav-btn favorites-nav-btn ${isFav ? 'active' : ''}" data-id="${character.id}">
                     <i class="fas fa-heart"></i> ${isFav ? 'Quitar de favoritos' : 'Agregar a favoritos'}
                 </button>
                 <div class="detail-info">
@@ -100,7 +100,7 @@ class UIManager {
         
         this.modal.classList.add('active');
         
-        const detailFavBtn = this.modalBody.querySelector('.detail-fav-btn');
+        const detailFavBtn = this.modalBody.querySelector('.favorites-nav-btn');
         if (detailFavBtn) {
             detailFavBtn.addEventListener('click', (e) => {
                 e.stopPropagation();

@@ -500,6 +500,10 @@ body {
   margin: var(--spacing-lg);
 }
 
+.character-detail .favorites-nav-btn {
+  margin: 0 auto var(--spacing-lg) auto;
+}
+
 .detail-info {
   text-align: left;
   background: rgba(0, 0, 0, 0.3);
