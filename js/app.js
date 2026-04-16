@@ -41,6 +41,14 @@ async function loadCharacters() {
         totalPages = data.info.pages;
         ui.renderCharacters(data.results);
         
+        // Habilitar filtros y búsqueda
+        searchInput.disabled = false;
+        statusFilter.disabled = false;
+        speciesFilter.disabled = false;
+        searchInput.style.opacity = '1';
+        statusFilter.style.opacity = '1';
+        speciesFilter.style.opacity = '1';
+
         // Actualizar paginación
         pageInfo.textContent = `Página ${currentPage} de ${totalPages}`;
         prevPageBtn.disabled = currentPage === 1;
@@ -161,6 +169,13 @@ function showFavorites() {
     pageInfo.textContent = `Favoritos (${favorites.length})`;
     prevPageBtn.disabled = true;
     nextPageBtn.disabled = true;
+    searchInput.value = '';
+    searchInput.disabled = true;
+    statusFilter.disabled = true;
+    speciesFilter.disabled = true;
+    searchInput.style.opacity = '0.5';
+    statusFilter.style.opacity = '0.5';
+    speciesFilter.style.opacity = '0.5';
 }
 
 // Cambiar vista
