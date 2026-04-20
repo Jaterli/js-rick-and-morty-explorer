@@ -57,6 +57,41 @@ body {
   min-height: 100vh;
 }
 
+
+/* Versión simplificada (solo lo necesario para tu HTML original) */
+footer {
+  margin-top: var(--spacing-2xl);
+  padding: var(--spacing-xl) var(--spacing-lg);
+  background: rgba(30, 30, 47, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: var(--border-radius-md);
+  border-top: 1px solid rgba(0, 181, 204, 0.2);
+  text-align: center;
+}
+
+.footer-credit {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.creator-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: var(--transition-fast);
+}
+
+.creator-link:hover {
+  color: var(--primary-dark);
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  color: var(--text-muted);
+  font-size: 0.75rem;
+}
+
 .app-container {
   max-width: 87.5rem; /* 1400px */
   margin: 0 auto;

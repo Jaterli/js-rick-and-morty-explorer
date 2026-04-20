@@ -40,99 +40,120 @@
             </div>
         </header>
 
-        <!-- Vista de Personajes -->
-        <div id="charactersView" class="view active">
-            
-            <div class="seccion-header">
-                <h2><i class="fas fa-users"></i> Personajes</h2>
-                <!-- Filtros -->
-                <div class="filters-section">
-                    <div class="search-box">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="searchInput" placeholder="Buscar personaje...">
+        <main>
+            <!-- Vista de Personajes -->
+            <div id="charactersView" class="view active">
+                
+                <div class="seccion-header">
+                    <h2><i class="fas fa-users"></i> Personajes</h2>
+                    <!-- Filtros -->
+                    <div class="filters-section">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchInput" placeholder="Buscar personaje...">
+                        </div>
+                        <div class="filter-group">
+                            <select id="statusFilter">
+                                <option value="">Todos los estados</option>
+                                <option value="alive">Vivo</option>
+                                <option value="dead">Muerto</option>
+                                <option value="unknown">Desconocido</option>
+                            </select>
+                            <select id="speciesFilter">
+                                <option value="">Todas las especies</option>
+                                <option value="human">Humano</option>
+                                <option value="alien">Alienígena</option>
+                                <option value="humanoid">Humanoide</option>
+                                <option value="mythological">Mitológico</option>
+                                <option value="animal">Animal</option>
+                                <option value="robot">Robot</option>
+                                <option value="cronenberg">Cronenberg</option>
+                                <option value="disease">Enfermedad</option>
+                                <option value="poopybutthole">Poopybutthole</option>
+                                <option value="unknown">Desconocida</option>
+                            </select>
+                        </div>
                     </div>
-                    <div class="filter-group">
-                        <select id="statusFilter">
-                            <option value="">Todos los estados</option>
-                            <option value="alive">Vivo</option>
-                            <option value="dead">Muerto</option>
-                            <option value="unknown">Desconocido</option>
-                        </select>
-                        <select id="speciesFilter">
-                            <option value="">Todas las especies</option>
-                            <option value="human">Humano</option>
-                            <option value="alien">Alienígena</option>
-                            <option value="humanoid">Humanoide</option>
-                            <option value="mythological">Mitológico</option>
-                            <option value="animal">Animal</option>
-                            <option value="robot">Robot</option>
-                            <option value="cronenberg">Cronenberg</option>
-                            <option value="disease">Enfermedad</option>
-                            <option value="poopybutthole">Poopybutthole</option>
-                            <option value="unknown">Desconocida</option>
-                        </select>
-                    </div>
+                </div>
+
+                <!-- Loading y Error -->
+                <div id="loadingIndicator" class="loading-indicator hidden">
+                    <div class="spinner"></div>
+                    <p>Cargando personajes...</p>
+                </div>
+                <div id="errorMessage" class="error-message hidden"></div>
+
+                <!-- Grid de personajes -->
+                <div id="charactersGrid" class="characters-grid"></div>
+
+                <!-- Paginación -->
+                <div class="pagination" id="pagination">
+                    <button id="prevPage" class="page-btn" disabled>
+                        <i class="fas fa-chevron-left"></i> Anterior
+                    </button>
+                    <span id="pageInfo" class="page-info">Página 1</span>
+                    <button id="nextPage" class="page-btn">
+                        Siguiente <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
 
-            <!-- Loading y Error -->
-            <div id="loadingIndicator" class="loading-indicator hidden">
-                <div class="spinner"></div>
-                <p>Cargando personajes...</p>
-            </div>
-            <div id="errorMessage" class="error-message hidden"></div>
-
-            <!-- Grid de personajes -->
-            <div id="charactersGrid" class="characters-grid"></div>
-
-            <!-- Paginación -->
-            <div class="pagination" id="pagination">
-                <button id="prevPage" class="page-btn" disabled>
-                    <i class="fas fa-chevron-left"></i> Anterior
-                </button>
-                <span id="pageInfo" class="page-info">Página 1</span>
-                <button id="nextPage" class="page-btn">
-                    Siguiente <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Vista de Episodios -->
-        <div id="episodesView" class="view">
-            
-            <div class="seccion-header">
-                <h2><i class="fas fa-tv"></i> Episodios</h2>
-                <div class="episodes-search">
-                    <div class="search-box">
-                        <i class="fas fa-search"></i>
-                        <input type="text" id="episodeSearch" placeholder="Buscar episodio...">
+            <!-- Vista de Episodios -->
+            <div id="episodesView" class="view">
+                
+                <div class="seccion-header">
+                    <h2><i class="fas fa-tv"></i> Episodios</h2>
+                    <div class="episodes-search">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="episodeSearch" placeholder="Buscar episodio...">
+                        </div>
                     </div>
                 </div>
+                <div id="episodesLoading" class="loading-indicator hidden">
+                    <div class="spinner"></div>
+                    <p>Cargando episodios...</p>
+                </div>
+                <div id="episodesGrid" class="episodes-grid"></div>
+                <div class="pagination" id="episodesPagination">
+                    <button id="episodesPrevPage" class="page-btn" disabled>
+                        <i class="fas fa-chevron-left"></i> Anterior
+                    </button>
+                    <span id="episodesPageInfo" class="page-info">Página 1</span>
+                    <button id="episodesNextPage" class="page-btn">
+                        Siguiente <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
-            <div id="episodesLoading" class="loading-indicator hidden">
-                <div class="spinner"></div>
-                <p>Cargando episodios...</p>
-            </div>
-            <div id="episodesGrid" class="episodes-grid"></div>
-            <div class="pagination" id="episodesPagination">
-                <button id="episodesPrevPage" class="page-btn" disabled>
-                    <i class="fas fa-chevron-left"></i> Anterior
-                </button>
-                <span id="episodesPageInfo" class="page-info">Página 1</span>
-                <button id="episodesNextPage" class="page-btn">
-                    Siguiente <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
-        </div>
+        </main>
 
         <!-- Modal de Detalle -->
-        <div id="detailModal" class="modal">
+        <div id="detailModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="Detalles">
             <div class="modal-content">
                 <span class="modal-close">X</span>
                 <div id="modalBody"></div>
             </div>
         </div>
+
     </div>
+
+    <footer>
+        <div class="footer-content">    
+            <p class="footer-credit">
+                Creado con <i class="fas fa-heart" style="color: var(--favorite);"></i> por 
+                <a href="https://www.jaterli.com" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    class="creator-link">
+                    Jaterli
+                </a>
+            </p>
+            
+            <p class="footer-copyright">
+                <i class="far fa-copyright"></i> 2026 - Todos los derechos reservados
+            </p>
+        </div>
+    </footer>
 
     <script src="js/favorites.js"></script>
     <script src="js/api.js"></script>
