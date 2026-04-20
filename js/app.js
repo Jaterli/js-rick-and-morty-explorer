@@ -108,7 +108,7 @@ function attachCharacterEvents() {
             const character = await api.getCharacterById(id);
             favoritesManager.toggleFavorite(character);
             ui.updateFavoritesCount();
-            loadCharacters(); // Recargar para actualizar íconos
+            currentView === 'favorites' ? showFavorites() : loadCharacters();
             document.dispatchEvent(new CustomEvent('favoritesUpdated'));
         });
     });

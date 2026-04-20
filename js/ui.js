@@ -106,7 +106,7 @@ class UIManager {
                 e.stopPropagation();
                 favoritesManager.toggleFavorite(character);
                 this.renderCharacterDetail(character, episodes);
-                loadCharacters();
+                currentView === 'favorites' ? showFavorites() : loadCharacters();
                 this.updateFavoritesCount();
                 // Disparar evento para actualizar otras partes de la UI
                 document.dispatchEvent(new CustomEvent('favoritesUpdated'));
